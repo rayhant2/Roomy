@@ -15,7 +15,7 @@ export default function TabLayout() {
         headerShown: false,
       }}>
 
-        <Tabs.Screen
+      <Tabs.Screen
         name="landing"
         options={{
           title: 'Landing',
@@ -33,7 +33,6 @@ export default function TabLayout() {
           ),
         }}
       />
-
       <Tabs.Screen
         name="verification"
         options={{
@@ -43,8 +42,8 @@ export default function TabLayout() {
           ),
         }}
       />
-
-      <Tabs.Screen
+      
+      {/* <Tabs.Screen
         name="mainpage"
         options={{
           title: 'Main',
@@ -52,7 +51,7 @@ export default function TabLayout() {
             <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
           ),
         }}
-      />
+      /> */}
     </Tabs>
   );
 }

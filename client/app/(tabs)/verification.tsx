@@ -1,37 +1,39 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { StyleSheet, Image, Platform, View, TextInput, SafeAreaView, Pressable, Text } from 'react-native';
-import React, { useState, useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Collapsible } from '@/components/Collapsible';
 import { ExternalLink } from '@/components/ExternalLink';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
+import { useNavigation } from '@react-navigation/native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { useNavigation } from '@react-navigation/native';
 
 import Button from '@/components/ButtonLanding';
 
 const TabFourScreen = () => {
-    const [code, setCode] = useState(['', '', '', '', '', '']);
-    const navigation = useNavigation();
-    const inputRefs = useRef<TextInput[]>([]);
+    const [code, setCode] = useState<string[]>(['', '', '', '', '', '']);
+    const inputRefs = useRef<(TextInput | null)[]>([]);
 
-    const handleChange = (text: string, index: number) => {
-        if (/^\d$/.test(text) || text === '') {
+    const navigation = useNavigation();
+
+    const handleInputChange = (text: string, index: number) => {
+        if (/^\d$/.test(text)) {
             const newCode = [...code];
             newCode[index] = text;
             setCode(newCode);
 
-            if (text !== '' && index < code.length - 1) {
-                inputRefs.current[index + 1].focus();
-            } else if (text === '' && index > 0) {
-                inputRefs.current[index - 1].focus();
+            if (index < 5 && inputRefs.current[index + 1]) {
+                inputRefs.current[index + 1]?.focus();
             }
         }
     };
 
-    const handleKeyPress = (e: any, index: number) => {
-        if (e.nativeEvent.key === 'Backspace' && code[index] === '' && index > 0) {
-            inputRefs.current[index - 1].focus();
+    const handlePaste = (event: any) => {
+        const pastedText = event.nativeEvent.text;
+        if (/^\d{6}$/.test(pastedText)) {
+            const newCode = pastedText.split('');
+            setCode(newCode);
+            inputRefs.current[5]?.focus();
         }
     };
 
@@ -49,14 +51,13 @@ const TabFourScreen = () => {
                 {code.map((digit, index) => (
                     <TextInput
                         key={index}
-                        ref={(el) => (inputRefs.current[index] = el!)}
+                        ref={(ref) => inputRefs.current[index] = ref}
                         style={styles.input}
-                        onChangeText={(text) => handleChange(text, index)}
-                        onKeyPress={(e) => handleKeyPress(e, index)}
                         value={digit}
-                        placeholder='_'
+                        onChangeText={(text) => handleInputChange(text, index)}
                         keyboardType='numeric'
                         maxLength={1}
+                        placeholder='_'
                         placeholderTextColor='black'
                     />
                 ))}
@@ -64,13 +65,13 @@ const TabFourScreen = () => {
             <View style={styles.resendContainer}>
                 <Text style={styles.resendText}>Didn't get the code?</Text>
                 <Pressable>
-                    <Text style={styles.resendButton}>Resend</Text>
+                    <Text style={styles.resendLink}>Resend</Text>
                 </Pressable>
             </View>
             <Button
-                title="Get Started"
-                onPress={() => navigation.navigate('mainpage')}
-                style={styles.button}
+              title="Get Started"
+              onPress={() => navigation.navigate('mainpage')}
+              style={styles.button}
             />
         </View>
     );
@@ -135,7 +136,7 @@ const styles = StyleSheet.create({
     resendText: {
         fontSize: 18,
     },
-    resendButton: {
+    resendLink: {
         fontWeight: 'bold',
         color: 'black',
         textDecorationLine: 'underline',
@@ -144,7 +145,7 @@ const styles = StyleSheet.create({
         position: 'relative',
         margin: 20,
     },
-    button: {
+    buttonStyle: {
         backgroundColor: "#FFD600",
         color: 'white',
         height: 50,
@@ -154,6 +155,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         padding: 10,
+    },
+    button: {
+        backgroundColor: '#FFD600', // Yellow color
+        padding: 5,
+        width: 300,
+        height: 60, // Adjust height to match shadowBox height
+        borderRadius: 0,
+        alignItems: 'flex-start',
+        justifyContent: 'center',
     },
     buttonText: {
         fontWeight: 'bold',

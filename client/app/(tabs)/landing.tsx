@@ -24,7 +24,7 @@ export default function TabTwoScreen() {
 
         <Button
           title="Get Started"
-          onPress={() => navigation.navigate('login')}
+          onPress={() => navigation.navigate('mainpage')}  // Update this line
           style={styles.button}
         />
 
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   },
   body: {
     backgroundColor: '#fff',
-    flex: 4,
+    flex: 1,
     justifyContent: 'center',
     padding: 20,
   },
@@ -52,11 +52,9 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   logo: {
-    width: '40%', // Adjust width to 50% of the container
-    height: undefined,
-    aspectRatio: 1, // Maintain aspect ratio
+    width: 150,
+    height: 150,
     resizeMode: 'contain',
-    marginTop: 75,
   },
   titleContainer: {
     flexDirection: 'row',
@@ -75,18 +73,15 @@ const styles = StyleSheet.create({
     padding: 20,
     fontSize: 36,
     lineHeight: 48,
-    fontWeight: '800',
+    fontWeight: 800,
+    fontFamily: 'RedHat-Display',
   },
   button: {
-    width: '100%', // Adjust width to 100% of the container
-    aspectRatio: 320 / 62, // Maintain the aspect ratio of the button image
-    resizeMode: 'contain', // Ensure the image scales proportionally
-    marginTop: 20,
+    // Add any specific styles for the button here if needed
   },
   groupPicture: {
-    width: '80%', // Adjust width to 80% of the container
-    height: undefined,
-    aspectRatio: 1, // Maintain aspect ratio
+    width: 300,
+    height: 300,
     resizeMode: 'contain',
     alignSelf: 'center',
     marginTop: 20,

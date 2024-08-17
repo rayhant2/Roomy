@@ -24,7 +24,7 @@ export default function TabTwoScreen() {
 
         <Button
           title="Get Started"
-          onPress={() => navigation.navigate('explore')}
+          onPress={() => navigation.navigate('login')}
           style={styles.button}
         />
 
@@ -52,10 +52,11 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   logo: {
-    width: '50%', // Adjust width to 50% of the container
+    width: '40%', // Adjust width to 50% of the container
     height: undefined,
     aspectRatio: 1, // Maintain aspect ratio
     resizeMode: 'contain',
+    marginTop: 75,
   },
   titleContainer: {
     flexDirection: 'row',
@@ -75,7 +76,6 @@ const styles = StyleSheet.create({
     fontSize: 36,
     lineHeight: 48,
     fontWeight: '800',
-    fontFamily: 'RedHat-Display',
   },
   button: {
     width: '100%', // Adjust width to 100% of the container

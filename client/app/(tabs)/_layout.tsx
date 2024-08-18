@@ -44,6 +44,18 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
+        name="dashboard"
+        options={{
+          title: 'Main',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+          ),
+        }}
+      />
+
+
+      {/* DO NOT DELETE INDEX WHATSOEVER */}
+      <Tabs.Screen    
         name="index"
         options={{
           title: 'index',

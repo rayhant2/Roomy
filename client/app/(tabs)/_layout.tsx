@@ -73,16 +73,6 @@ export default function TabLayout() {
         }}
       />
 
-      <Tabs.Screen
-        name="cardtest"
-        options={{
-          title: 'Card',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
-          ),
-        }}
-      />
-
 
       {/* DO NOT DELETE INDEX WHATSOEVER */}
       <Tabs.Screen    

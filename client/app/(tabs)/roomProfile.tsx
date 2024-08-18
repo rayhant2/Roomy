@@ -54,6 +54,7 @@ const PrivacyAccountScreen = () => {
 
         <View style={{marginTop: 10}}>
             <ThemedText type='title' style={styles.welcome}>Roommate Profile</ThemedText>
+            <ThemedText type='link' style={{color: '#ccb800'}}>Edit Profile</ThemedText>
         </View>
 
         <SafeAreaView style={{alignItems: 'center'}}>
@@ -123,8 +124,7 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   welcome: {
-    flexDirection: 'row',
-    height: 50,
+    height: 30,
     width: 300,
     fontSize: 25,
   },

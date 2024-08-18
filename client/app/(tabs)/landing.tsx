@@ -24,7 +24,7 @@ export default function TabTwoScreen() {
 
         <Button
           title="Get Started"
-          onPress={() => navigation.navigate('mainpage')}  // Update this line
+          onPress={() => navigation.navigate('explore')}
           style={styles.button}
         />
 

@@ -36,7 +36,7 @@ export default function TabTwoScreen() {
 
         <Button
           title="I'm ready for a roommate"
-          onPress={() => navigation.navigate("login")} //placeholder "login" for now
+          onPress={() => navigation.navigate("step1")}
           style={styles.button}
         />
       </ThemedView>

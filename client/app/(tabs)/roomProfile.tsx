@@ -9,7 +9,18 @@ import { ThemedView } from '@/components/ThemedView';
 
 const PrivacyAccountScreen = () => {
     const [pass, onChangePass] = React.useState('');
+
     const firstName = 'Tahseen';
+    const age = 2024 - 2006;
+    const pronouns = 'He/Him';
+    const city = 'Waterloo,ON';
+    const wantRoommate = true;
+    const occupation = 'Student';
+    const institution = 'WLU';
+    const preferences = 'Single-gender, 1st year';
+
+
+
     const lastName = 'Rayhan';
     const birthday = '01/01/2001';
     const email = 'seen.rayhan@gmail.com';
@@ -41,44 +52,57 @@ const PrivacyAccountScreen = () => {
 
         </SafeAreaView>
 
-        <View style={{marginVertical: 10}}>
-            <ThemedText type='title' style={styles.welcome}>Privacy & Account</ThemedText>
+        <View style={{marginTop: 10}}>
+            <ThemedText type='title' style={styles.welcome}>Roommate Profile</ThemedText>
+            <ThemedText type='link' style={{color: '#ccb800'}}>Edit Profile</ThemedText>
         </View>
 
+        <SafeAreaView style={{alignItems: 'center'}}>
+            
+            <Image source={require('@/assets/images/profileDefault.png')} style={{
+                height: 170,
+                width: 170,
+                alignSelf: 'center'
+            }}/>
+        
+            <View style={{flexDirection: 'row', alignItems: 'center', gap: 10, justifyContent: 'center'}}>
+                <ThemedText type='title'>{firstName}</ThemedText>
+                <ThemedText type='defaultSemiBold' style={{fontSize: 24}}>{age}</ThemedText>
+            </View>
+            
+            <View style={{flexDirection: 'row', alignItems: 'center', gap: 5, justifyContent: 'center', margin: 4}}>
+                <Text>{pronouns}</Text>
+                <Ionicons name='ellipse' style={{fontSize: 8, marginHorizontal: 4}}/>
+                <Text>{city}</Text>
+            </View>
+        
+        </SafeAreaView>
 
-        <View style={{rowGap: 35, margin: 10, justifyContent: 'space-evenly'}}>
+
+        <View style={{rowGap: 25, margin: 15, marginTop: 35, justifyContent: 'space-evenly'}}>
 
             <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                <Text style={styles.textformat}>First Name:</Text>
-                <Text style={styles.textformat}>{firstName}</Text>            
+                <Text style={styles.textformat}>Status:</Text>
+                <Text style={styles.textformat}>{wantRoommate ? 'Looking for roommate' : 'Not interested'}</Text>            
             </View>
             <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                <Text style={styles.textformat}>Last Name:</Text>
-                <Text style={styles.textformat}>{lastName}</Text>            
+                <Text style={styles.textformat}>Occupation:</Text>
+                <Text style={styles.textformat}>{occupation}</Text>            
             </View>
             <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                <Text style={styles.textformat}>Birthday:</Text>
-                <Text style={styles.textformat}>{birthday}</Text>            
-            </View>
-            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                <Text style={styles.textformat}>Email:</Text>
-                <Text style={styles.textformat}>{email}</Text>            
+                <Text style={styles.textformat}>Institution:</Text>
+                <Text style={styles.textformat}>{institution}</Text>            
             </View>
         </View>
 
-        <View style={styles.line} />
-
-        <View style={{flexDirection: 'row', gap: 8, alignItems: 'center', margin: 10}}>
-            <ThemedText type='defaultSemiBold' style={{fontSize: 14}}>Something look wrong?</ThemedText>
-            <ThemedText type='link' style={{fontWeight: 'bold', color: '#ccb800', fontSize: 14}}>Contact us</ThemedText>
+        <View style={{justifyContent: 'space-between', marginTop: 20, marginHorizontal: 15}}>
+            <Text style={styles.textformat}>Roommate Preferences:</Text>
+            <Text style={styles.preferences}>{preferences}</Text>            
         </View>
-
 
         <View style={styles.container}>
-
             <Image source={require('@/assets/images/menubar.png')} 
                 style={styles.bottomImage}/>
-
         </View>
 
     </View>
@@ -100,8 +124,7 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   welcome: {
-    flexDirection: 'row',
-    height: 50,
+    height: 30,
     width: 300,
     fontSize: 25,
   },
@@ -146,6 +169,12 @@ const styles = StyleSheet.create({
         borderBottomColor: 'black',
         borderBottomWidth: 2,
         marginTop: 30
+    },
+    preferences: {
+        fontWeight: 'medium',
+        fontSize: 17,
+        marginTop: 12,
+        fontStyle: 'italic'
     }
 });
 

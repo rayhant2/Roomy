@@ -63,6 +63,16 @@ export default function TabLayout() {
         }}
       />
 
+      <Tabs.Screen
+        name="roomProfile"
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+          ),
+        }}
+      />
+
 
       {/* DO NOT DELETE INDEX WHATSOEVER */}
       <Tabs.Screen    

@@ -8,5 +8,5 @@ export default function InitalRouting() {
   if (!rootNavigationState?.key) return null;
 
 
-  return <Redirect href={'/(tabs)/HomeScreen'} />
+  return <Redirect href={'/(tabs)/landing'} />
 }

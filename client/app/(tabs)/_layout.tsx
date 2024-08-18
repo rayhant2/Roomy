@@ -42,16 +42,16 @@ export default function TabLayout() {
           ),
         }}
       />
-      
-      {/* <Tabs.Screen
-        name="mainpage"
+
+      <Tabs.Screen
+        name="index"
         options={{
-          title: 'Main',
+          title: 'index',
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
           ),
         }}
-      /> */}
+      />
     </Tabs>
   );
 }

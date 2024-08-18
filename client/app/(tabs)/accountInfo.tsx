@@ -7,10 +7,13 @@ import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
-const TabFourScreen = () => {
+const PrivacyAccountScreen = () => {
     const [pass, onChangePass] = React.useState('');
-    const user = 'Tahseen';
-    const windowHeight = Dimensions.get('window').height;
+    const firstName = 'Tahseen';
+    const lastName = 'Rayhan';
+    const birthday = '01/01/2001';
+    const email = 'seen.rayhan@gmail.com';
+
 
     return (
         <View style={{
@@ -40,6 +43,34 @@ const TabFourScreen = () => {
 
         <View style={{marginVertical: 10}}>
             <ThemedText type='title' style={styles.welcome}>Privacy & Account</ThemedText>
+        </View>
+
+
+        <View style={{rowGap: 35, margin: 10, justifyContent: 'space-evenly'}}>
+
+            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <Text style={styles.textformat}>First Name:</Text>
+                <Text style={styles.textformat}>{firstName}</Text>            
+            </View>
+            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <Text style={styles.textformat}>Last Name:</Text>
+                <Text style={styles.textformat}>{lastName}</Text>            
+            </View>
+            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <Text style={styles.textformat}>Birthday:</Text>
+                <Text style={styles.textformat}>{birthday}</Text>            
+            </View>
+            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <Text style={styles.textformat}>Email:</Text>
+                <Text style={styles.textformat}>{email}</Text>            
+            </View>
+        </View>
+
+        <View style={styles.line} />
+
+        <View style={{flexDirection: 'row', gap: 8, alignItems: 'center', margin: 10}}>
+            <ThemedText type='defaultSemiBold' style={{fontSize: 14}}>Something look wrong?</ThemedText>
+            <ThemedText type='link' style={{fontWeight: 'bold', color: '#ccb800', fontSize: 14}}>Contact us</ThemedText>
         </View>
 
 
@@ -107,7 +138,16 @@ const styles = StyleSheet.create({
         width: Dimensions.get('screen').width,
         height: 30,
     },
+    textformat: {
+        fontWeight: 'medium',
+        fontSize: 17
+    },
+    line: {
+        borderBottomColor: 'black',
+        borderBottomWidth: 2,
+        marginTop: 30
+    }
 });
 
 
-export default TabFourScreen;
+export default PrivacyAccountScreen;

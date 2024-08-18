@@ -1,38 +1,52 @@
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { StyleSheet, Image, Platform } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, Image, View, Text, TextInput } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-import { Collapsible } from "@/components/Collapsible";
-import { ExternalLink } from "@/components/ExternalLink";
-import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
-import Button from "@/components/ButtonLanding";
+import Button from "@/components/ButtonSubmit";
+import NumberSquare from "@/components/AccountStep";
 
-export default function AccountStep1() {
+export default function AccountStep2() {
   const navigation = useNavigation();
+  const [occupation, setOccupation] = useState("");
+  const [annualSalary, setAnnualSalary] = useState("");
+  const [hoursPerWeek, setHoursPerWeek] = useState("");
+
   return (
     <ThemedView style={styles.container}>
       <ThemedView style={styles.body}>
-        <ThemedView style={styles.logoContainer}>
+        <View style={styles.logoStepNumber}>
           <Image
             source={require("@/assets/images/logo_official.png")}
             style={styles.logo}
           />
-        </ThemedView>
+          <NumberSquare number={8} width={125} height={125} style={{}} />
+        </View>
         <ThemedText style={[styles.textMain, { textAlign: "left" }]}>
-          It's like tinder, but for finding the perfect roomates
+          Let's see your face!
         </ThemedText>
-
+        <View style={styles.inputContainer}>
+          <Text style={styles.label}>
+            Upload a picture of you for everyone to see:
+          </Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Ex) Software Engineer"
+            value={occupation}
+            onChangeText={setOccupation}
+          />
+        </View>
+        <View style={styles.inputContainer}>
+          <Text style={styles.label}>
+            Supported file types: .jpg, .jpeg, .png {"\n"}
+            **Ensure only one face is in the picture**
+          </Text>
+        </View>
         <Button
-          title="Get Started"
-          onPress={() => navigation.navigate("login")}
+          title="Submit"
+          onPress={() => navigation.navigate("dashboard")}
           style={styles.button}
-        />
-
-        <Image
-          source={require("@/assets/images/group_pic.png")}
-          style={styles.groupPicture}
         />
       </ThemedView>
     </ThemedView>
@@ -51,14 +65,21 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     padding: 20,
   },
-  logoContainer: {
-    alignItems: "flex-start",
-    justifyContent: "center",
-    padding: 20,
+  logoStepNumber: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    width: "100%",
+    padding: 15,
   },
   logo: {
-    width: 150,
-    height: 150,
+    width: 125,
+    height: 125,
+    resizeMode: "contain",
+  },
+  accsetup: {
+    width: 125,
+    height: 125,
     resizeMode: "contain",
   },
   titleContainer: {
@@ -78,8 +99,31 @@ const styles = StyleSheet.create({
     padding: 20,
     fontSize: 36,
     lineHeight: 48,
-    fontWeight: 800,
-    fontFamily: "RedHat-Display",
+    fontWeight: "800",
+  },
+  inputContainer: {
+    position: "relative",
+    marginBottom: 20,
+    paddingTop: 20,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  label: {
+    position: "absolute",
+    top: 0,
+    left: 10,
+    backgroundColor: "#fff",
+    paddingHorizontal: 5,
+    fontSize: 14,
+    color: "#000",
+  },
+  input: {
+    height: 60,
+    borderColor: "#ccc",
+    borderWidth: 1,
+    paddingHorizontal: 10,
+    borderRadius: 5,
+    width: "86%",
   },
   button: {
     // Add any specific styles for the button here if needed

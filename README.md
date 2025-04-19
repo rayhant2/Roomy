@@ -3,9 +3,7 @@
 [![Find the perfect roommates with a tinder styled app!](https://ytcards.demolab.com/?id=4WEibEsgpv4&title=Find+the+perfect+roommates+with+a+tinder+styled+app!&lang=en&timestamp=1636628400&background_color=%230d1117&title_color=%23ffffff&stats_color=%23dedede&max_title_lines=1&width=500&border_radius=5&duration=436 "Find the perfect roommates with a tinder styled app!")](https://www.youtube.com/watch?v=4WEibEsgpv4)
 
 ![image](https://github.com/user-attachments/assets/e7205f2d-c2ef-4a6c-86fe-592e67881d14)
-![image](https://github.com/user-attachments/assets/700937bb-d536-47ae-9177-a63209c2b876)
-
-
+![image](https://github.com/user-attachments/assets/79f95982-3c1c-4a97-9003-bc88a2e74561)
 
 Roomy.co is a mobile app designed to help university students find their perfect roommate. By combining the swiping mechanics of Tinder with an algorithm that matches users based on their preferences, Roomy.co makes the roommate search process fun, engaging, and efficient.
 

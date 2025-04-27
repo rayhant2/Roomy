@@ -1,4 +1,4 @@
-# Roomy - Tinder for College Roommates
+# Roomy - Platform for Easily Finding College Roommates
 
 [![Find the perfect roommates with a tinder styled app!](https://ytcards.demolab.com/?id=4WEibEsgpv4&title=Find+the+perfect+roommates+with+a+tinder+styled+app!&lang=en&timestamp=1636628400&background_color=%230d1117&title_color=%23ffffff&stats_color=%23dedede&max_title_lines=1&width=500&border_radius=5&duration=436 "Find the perfect roommates with a tinder styled app!")](https://www.youtube.com/watch?v=4WEibEsgpv4)
 
